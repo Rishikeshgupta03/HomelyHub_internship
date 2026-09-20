@@ -11,6 +11,16 @@ import { tripRouter} from "./routes/tripRouter.js";
 
 const app = express();
 
+app.use(cors({
+    origin: [
+        "http://localhost:5173",                 
+        "https://homelyhubbooking.netlify.app"   
+    ],
+    credentials: true,                           
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
